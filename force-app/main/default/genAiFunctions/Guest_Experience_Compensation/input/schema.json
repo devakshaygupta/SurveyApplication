@@ -1,0 +1,24 @@
+{
+  "required" : [ "Input:Complaint", "Input:Contact" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "Input:Complaint" : {
+      "title" : "Complaint",
+      "description" : "Use the text received from the guest complaint in the chat.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "Input:Contact" : {
+      "title" : "Contact",
+      "description" : "Input will be the contact record and this contact record will be passed through another flow.",
+      "lightning:type" : "lightning__recordInfoType",
+      "lightning:sObjectInfo" : {
+        "apiName" : "Contact"
+      },
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

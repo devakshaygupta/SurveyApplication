@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Generates marketing taglines for a new all-inclusive resort package.</description>
+    <developerName>All_Inclusive_Resort_Taglines</developerName>
+    <masterLabel>All-Inclusive Resort Taglines</masterLabel>
+    <templateVersions>
+        <content>You are a creative marketer at Coral Cloud Resort. The resort offers a luxurious all-inclusive package with gourmet dining, spa treatments, and exclusive excursions. Create three unique and compelling marketing taglines that highlight the resort&apos;s unique features and appeal to upscale travelers. Keep each tagline concise and engaging, aiming to evoke a sense of exclusivity and relaxation.
+
+Explain your thought process for each tagline step-by-step.
+</content>
+        <inputs>
+            <apiName>query</apiName>
+            <definition>primitive://String</definition>
+            <referenceName>Input:query</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>chunks</apiName>
+            <definition>primitive://String</definition>
+            <referenceName>Input:chunks</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Draft</status>
+        <versionIdentifier>7Z3B/C8frpbDcyY3ml/nl59S13KK6tMfhM1zOpXtppY=_1</versionIdentifier>
+    </templateVersions>
+    <type>einstein_gpt__searchAnswersType</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>

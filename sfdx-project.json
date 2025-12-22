@@ -5,8 +5,8 @@
       "default": true
     }
   ],
-  "name": "SurveyApplication",
+  "name": "sf-trailhead",
   "namespace": "",
-  "sfdcLoginUrl": "https://akshaygupta-dev-ed.my.salesforce.com",
-  "sourceApiVersion": "60.0"
+  "sfdcLoginUrl": "https://login.salesforce.com",
+  "sourceApiVersion": "64.0"
 }

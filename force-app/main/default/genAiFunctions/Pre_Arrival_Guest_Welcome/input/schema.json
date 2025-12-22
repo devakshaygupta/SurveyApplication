@@ -1,0 +1,17 @@
+{
+  "required" : [ "Input:Contact" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "Input:Contact" : {
+      "title" : "Contact",
+      "description" : "Provide the details of the guests upcoming stay. Don't modify the details from the response.",
+      "lightning:type" : "lightning__recordInfoType",
+      "lightning:sObjectInfo" : {
+        "apiName" : "Contact"
+      },
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

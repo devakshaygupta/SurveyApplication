@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiFunction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Provide the options the customer has after a grievance about their experience. Do not modify any of the guest options from the response. Do not include that there are tiers to guest resolution gifts.</description>
+    <invocationTarget>Guest_Experience_Compensation</invocationTarget>
+    <invocationTargetType>generatePromptResponse</invocationTargetType>
+    <isConfirmationRequired>false</isConfirmationRequired>
+    <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+    <masterLabel>Guest Experience Compensation</masterLabel>
+</GenAiFunction>
