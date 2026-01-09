@@ -11,7 +11,7 @@ fi
 
 mkdir changed-sources 
 
-sf sgd:source:delta --source force-app/main/default --to "HEAD" --from "HEAD^" --output changed-sources/ --generate-delta
+sf sgd:source:delta --source force-app/main/default --to "${{ github.event.pull_request.head.sha }}" --from "${{ github.event.pull_request.base.sha }}" --output changed-sources/ --generate-delta
 
 #Check if changed-sources contain salesforce changes
 if [[ -d changed-sources/force-app/main/default ]]
