@@ -19,7 +19,7 @@ public class PropertyControllerTest {
     static void testFindById() {
         Boolean success = true;
         try {
-            Property__c p = new Property__c(Location__Latitude__s=-71.110448, Location__Longitude__s=42.360642);
+            Property__c p = new Property__c(Location__Latitude__s = -71.110448, Location__Longitude__s = 42.360642);
             insert p;
 	        Property__c property = PropertyController.findById(p.Id);
         } catch (Exception e) {
@@ -33,7 +33,7 @@ public class PropertyControllerTest {
     static void getAvailableProperties() {
         Boolean success = true;
         try {
-            Property__c p = new Property__c(Location__Latitude__s=-71.110448, Location__Longitude__s=42.360642);
+            Property__c p = new Property__c(Location__Latitude__s = -71.110448, Location__Longitude__s = 42.360642);
             insert p;
 	        Property__c[] r = PropertyController.getAvailableProperties();
         } catch (Exception e) {
@@ -47,7 +47,7 @@ public class PropertyControllerTest {
     static void getSimilarProperties() {
         Boolean success = true;
         try {
-            Property__c p = new Property__c(Location__Latitude__s=-71.110448, Location__Longitude__s=42.360642);
+            Property__c p = new Property__c(Location__Latitude__s = -71.110448, Location__Longitude__s = 42.360642);
             insert p;
 	        Property__c[] r = PropertyController.getSimilarProperties(p.Id, 3, 500000, 'Bedrooms');
         } catch (Exception e) {
