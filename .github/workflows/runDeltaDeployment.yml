@@ -20,6 +20,8 @@ env:
   JWT_KEY: ${{ secrets.JWT_KEY }}
   CLIENT_KEY: ${{ secrets.CLIENT_KEY }}
   USER_NAME: ${{ secrets.USER_NAME }}
+  HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+  BASE_SHA: ${{ github.event.pull_request.base.sha }}
   JOB_TYPE: "Deployment"
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel

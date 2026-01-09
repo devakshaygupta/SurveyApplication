@@ -18,6 +18,8 @@ env:
   REPOSITORY: ${{ github.repository }}
   BRANCH: ${{ github.head_ref }}
   PR_BODY: ${{ github.event.pull_request.body }}
+  HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+  BASE_SHA: ${{ github.event.pull_request.base.sha }}
   JWT_KEY: ${{ secrets.JWT_KEY }}
   CLIENT_KEY: ${{ secrets.CLIENT_KEY }}
   USER_NAME: ${{ secrets.USER_NAME }}
