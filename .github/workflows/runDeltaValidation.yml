@@ -18,6 +18,8 @@ env:
   REPOSITORY: ${{ github.repository }}
   BRANCH: ${{ github.head_ref }}
   PR_BODY: ${{ github.event.pull_request.body }}
+  HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+  BASE_SHA: ${{ github.event.pull_request.base.sha }}
   JWT_KEY: ${{ secrets.JWT_KEY }}
   CLIENT_KEY: ${{ secrets.CLIENT_KEY }}
   USER_NAME: ${{ secrets.USER_NAME }}
@@ -35,7 +37,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           repository: ${{ github.repository }}
 
@@ -64,13 +66,13 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           repository: ${{ github.repository }}
 
       - name: Cache node modules
         id: cache-npm
-        uses: actions/cache@v3
+        uses: actions/cache@v5
         env:
           cache-name: cache-node-modules
         with:

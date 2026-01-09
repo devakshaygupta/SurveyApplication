@@ -11,7 +11,7 @@ fi
 
 mkdir changed-sources 
 
-sf sgd:source:delta --source force-app/main/default --to "HEAD" --from "HEAD^" --output changed-sources/ --generate-delta
+sf sgd:source:delta --source force-app/main/default --to "${HEAD_SHA}" --from "${BASE_SHA}" --output changed-sources/ --generate-delta
 
 #Check if changed-sources contain salesforce changes
 if [[ -d changed-sources/force-app/main/default ]]
