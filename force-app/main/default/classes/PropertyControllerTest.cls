@@ -5,9 +5,9 @@ public class PropertyControllerTest {
     static void testFindAll() {
         Boolean success = true;
         try {
-            Property__c p = new Property__c(Location__Latitude__s=-71.110448, Location__Longitude__s=42.360642);
-            insert p;
-	        PropertyPagedResult r = PropertyController.findAll('', 0, 1000000, 8, 1);
+            Property__c property = new Property__c(Location__Latitude__s=-71.110448, Location__Longitude__s=42.360642);
+            insert property;
+	        PropertyPagedResult result = PropertyController.findAll('', 0, 1000000, 8, 1);
         } catch (Exception e) {
             success = false;
         } finally {
