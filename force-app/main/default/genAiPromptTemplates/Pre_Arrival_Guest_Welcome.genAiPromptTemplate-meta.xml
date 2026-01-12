@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionIdentifier>7Z3B/C8frpbDcyY3ml/nl59S13KK6tMfhM1zOpXtppY=_2</activeVersionIdentifier>
+    <developerName>Pre_Arrival_Guest_Welcome</developerName>
+    <masterLabel>Pre-Arrival Guest Welcome</masterLabel>
+    <templateVersions>
+        <content>You&apos;re a customer service representative responding to {!$Input:Contact.FirstName}, a guest at Coral Cloud Resort, ahead of their upcoming stay. Your goal is to deliver a personalized and friendly message that helps the guest feel welcomed, informed, and excited for their visit. Use the following trip booking details to craft a warm welcome message that includes resort highlights, helpful tips, and any activities they have booked in advance.
+Response Format:
+&quot;Hi {!$Input:Contact.FirstName},
+We’re so excited to welcome you to Coral Cloud Resort on {!$Input:Contact.Next_Check_in_Date__c}! Your adventure is just around the corner.
+If you have any questions before check-in, just let us know. We’re here to make your stay unforgettable!&quot;
+</content>
+        <inputs>
+            <apiName>Contact</apiName>
+            <definition>SOBJECT://Contact</definition>
+            <masterLabel>Contact</masterLabel>
+            <referenceName>Input:Contact</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+        <versionIdentifier>7Z3B/C8frpbDcyY3ml/nl59S13KK6tMfhM1zOpXtppY=_1</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>You&apos;re a customer service representative responding to {!$Input:Contact.FirstName}, a guest at Coral Cloud Resort, ahead of their upcoming stay. Your goal is to deliver a personalized and friendly message that helps the guest feel welcomed, informed, and excited for their visit. Use the following trip booking details to craft a warm welcome message that includes resort highlights, helpful tips, and any activities they have booked in advance.
+Response Format:
+&quot;Hi {!$Input:Contact.FirstName},
+{!$Flow:Get_Celebration_Details.Prompt}
+We’re so excited to welcome you to Coral Cloud Resort on {!$Input:Contact.Next_Check_in_Date__c}! Your adventure is just around the corner.
+If you have any questions before check-in, just let us know. We’re here to make your stay unforgettable!&quot;
+</content>
+        <inputs>
+            <apiName>Contact</apiName>
+            <definition>SOBJECT://Contact</definition>
+            <masterLabel>Contact</masterLabel>
+            <referenceName>Input:Contact</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>flow://Get_Celebration_Details</definition>
+            <parameters>
+                <definition>SOBJECT://Contact</definition>
+                <isRequired>true</isRequired>
+                <parameterName>contactRecord</parameterName>
+                <valueExpression>{!$Input:Contact}</valueExpression>
+            </parameters>
+            <referenceName>Flow:Get_Celebration_Details</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>7Z3B/C8frpbDcyY3ml/nl59S13KK6tMfhM1zOpXtppY=_2</versionIdentifier>
+    </templateVersions>
+    <type>einstein_gpt__flex</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>

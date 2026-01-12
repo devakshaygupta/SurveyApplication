@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlugin xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <canEscalate>false</canEscalate>
+    <description>Manage and optimize employee work schedules to ensure smooth resort operations.</description>
+    <developerName>p_16jdL000001tLCv_Employee_Schedule_Management</developerName>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__LabelARecord</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__CreateAToDo</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__AnswerQuestionsWithKnowledge</functionName>
+    </genAiFunctions>
+    <genAiPluginInstructions>
+        <description>If the task involves labeling or categorizing schedules, use EmployeeCopilot__LabelARecord.</description>
+        <developerName>instruction_0</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_0</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>For setting reminders or tasks related to schedules, use EmployeeCopilot__CreateAToDo.</description>
+        <developerName>instruction_1</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_1</masterLabel>
+    </genAiPluginInstructions>
+    <language>en_US</language>
+    <masterLabel>Employee Schedule Management</masterLabel>
+    <pluginType>Topic</pluginType>
+    <scope>Your job is to only assist with managing employee schedules, including assigning tasks or resolving scheduling conflicts. You cannot handle non-scheduling-related employee inquiries.</scope>
+</GenAiPlugin>

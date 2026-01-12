@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Creates a basic email template.</description>
+    <developerName>Generate_Sample_Email</developerName>
+    <masterLabel>Generate Sample Email</masterLabel>
+    <templateVersions>
+        <content>
+Write the introduction and body for a friendly and professional email from the Salesforce marketing
+team inviting an example customer to attend an upcoming event. Include the event name, location,
+and value of attending.
+
+Replicate the following format, but make the email body more detailed and evocative:
+
+Event Details:
+Name: Salesforce AI Launch Tour
+Location: Chicago
+Date: June 25
+
+Example 1:
+Event: Salesforce AI Launch Tour
+Location: Chicago
+Customer: Jordan Manning
+Company: FutureWorks Industries
+Email:
+Subject: You’re Invited to the Salesforce AI Launch Tour – Chicago
+Hi Jordan,
+We’re excited to invite you and your team at FutureWorks Industries to the Salesforce AI Launch Tour
+in Chicago on June 25.
+Write the introduction and body for a friendly and professional email from the Salesforce marketing
+team inviting an example customer to attend an upcoming event. Include the event name, location, and
+value of attending.
+
+Replicate the following format and tone, but replace all names with placeholders. Expand on the email
+copy to include at least three paragraphs while keeping the tone friendly and the content engaging.
+
+Event Details:
+Name: Salesforce AI Launch Tour
+Location: Chicago
+Date: June 25
+
+Example 1:
+Event: Salesforce AI Launch Tour
+Location: Chicago
+Customer: Jordan Manning
+Company: FutureWorks Industries
+Email:
+Subject: You’re Invited to the Salesforce AI Launch Tour – Chicago
+Hi Jordan,
+We’re excited to invite you and your team at FutureWorks Industries to the Salesforce AI Launch Tour
+in Chicago on June 25.
+It’s a great chance to see how Salesforce AI can drive productivity and connect with peers in your
+industry.
+Hope to see you there!
+– Your Salesforce Team
+
+Example 2:
+Event: Salesforce Customer Success Summit
+Location: New York
+Customer: Maya Jones
+Company: NextStep Health
+
+Subject: Let’s Meet at the Salesforce Customer Success Summit
+Hi Maya,
+We’d love to see you at our Customer Success Summit in New York on May 12.
+NextStep Health has been doing incredible work, and this event is a great opportunity to explore
+new tools to grow faster with Salesforce. We&apos;re excited to share the future and out latest innovations
+with our fantastic customers.
+Let us know if you can make it!
+– Your Salesforce Team
+</content>
+        <inputs>
+            <apiName>Customer_Account</apiName>
+            <definition>SOBJECT://Account</definition>
+            <masterLabel>Customer Account</masterLabel>
+            <referenceName>Input:Customer_Account</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Draft</status>
+        <versionIdentifier>7Z3B/C8frpbDcyY3ml/nl59S13KK6tMfhM1zOpXtppY=_1</versionIdentifier>
+    </templateVersions>
+    <type>einstein_gpt__flex</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>

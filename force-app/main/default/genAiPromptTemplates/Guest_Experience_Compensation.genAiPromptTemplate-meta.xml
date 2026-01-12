@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionIdentifier>7Z3B/C8frpbDcyY3ml/nl59S13KK6tMfhM1zOpXtppY=_2</activeVersionIdentifier>
+    <description>This template generates personalized compensation recommendations based on guest feedback and open case details, with tailored and empathetic responses.</description>
+    <developerName>Guest_Experience_Compensation</developerName>
+    <masterLabel>Guest Experience Compensation</masterLabel>
+    <templateVersions>
+        <content>You’re a customer service representative responding to {!$Input:Contact.FirstName}, a guest at Coral Cloud Resort, regarding a complaint they submitted about a recent experience they booked.
+Determine the appropriate tier of compensation based on the guidelines below:
+
+```Tier 0 (Minor Preference Issue) - No Open Cases
+Trigger: There are no open cases.
+Action: Apologize and acknowledge the feedback. Inform the guest that preferences will be noted for future stays and invite them to share more feedback to help improve. Do not offer compensation options.
+
+Tier 1 (Minor Inconvenience)
+Trigger: Issues such as delayed activity start times, minor room maintenance problems, or slow restaurant service fall into this category.
+
+Compensation Options:
+$50 Resort credit
+Complimentary drink, appetizer, or dessert
+Early check-in / late checkout (if available)
+
+Tier 2 (Moderate Disruption)
+Trigger: Covers booking errors affecting reservations, room/service dissatisfaction, extended delays
+
+Compensation Options:
+Rebooking of the same or alternative experience
+Resort credit (Up to $350 for dining, spa, or activities)
+Complimentary room upgrade (if available)
+
+Tier 3 (Major Disruption)
+Trigger: Activity cancellations, major booking failures, severe service issues, safety concerns
+
+Compensation Options:
+Resort credit (Up to $1000)
+Complimentary premium experience (private tour, fine dining, spa treatment)
+Complimentary 1-night stay extension```
+
+Response Format:
+“Hi {!$Input:Contact.FirstName}, We know this wasn’t the experience you were expecting, and we want to make it right.
+
+[If Tier 0]
+We&apos;ve noted your preferences for future stays and invite you to share any additional feedback to help us improve.
+
+[If Tier 1-3]
+Based on your recent experience, we’d like to offer you one of the following options:
+
+[Insert compensation options based on the determined tier]
+
+Please let us know which option you’d like to select, and we’ll take care of the rest. If you need any further assistance, we’re here to help!”
+
+Now create a message.
+</content>
+        <inputs>
+            <apiName>Contact</apiName>
+            <definition>SOBJECT://Contact</definition>
+            <masterLabel>Contact</masterLabel>
+            <referenceName>Input:Contact</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>Complaint</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>Complaint</masterLabel>
+            <referenceName>Input:Complaint</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+        <versionIdentifier>7Z3B/C8frpbDcyY3ml/nl59S13KK6tMfhM1zOpXtppY=_1</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>You’re a customer service representative responding to {!$Input:Contact.FirstName}, a guest at Coral Cloud Resort, regarding a complaint they submitted about a recent experience they booked.
+
+Use the details from the following case to determine the appropriate tier of compensation based on the guidelines below:
+
+If the case details say &quot;There are no open cases,&quot; or are empty or null, assign Tier 0.
+
+Case Details: {!$Flow:Get_Open_Cases_for_Contact.Prompt}
+Complaint: {!$Input:Complaint}
+
+If there is an open case, proceed with the appropriate compensation tier and include a brief
+mention that their issue is part of an existing official complaint. If there is not an open case,
+acknowledge the complaint, let the guest know it&apos;s appreciated, and that their preferences will be
+noted for future stays.
+
+```Tier 0 (Minor Preference Issue) - No Open Cases
+Trigger: There are no open cases.
+Action: Apologize and acknowledge the feedback. Inform the guest that preferences will be noted for future stays and invite them to share more feedback to help improve. Do not offer compensation options.
+
+Tier 1 (Minor Inconvenience)
+Trigger: Issues such as delayed activity start times, minor room maintenance problems, or slow restaurant service fall into this category.
+
+Compensation Options:
+$50 Resort credit
+Complimentary drink, appetizer, or dessert
+Early check-in / late checkout (if available)
+
+Tier 2 (Moderate Disruption)
+Trigger: Covers booking errors affecting reservations, room/service dissatisfaction, extended delays
+
+Compensation Options:
+Rebooking of the same or alternative experience
+Resort credit (Up to $350 for dining, spa, or activities)
+Complimentary room upgrade (if available)
+
+Tier 3 (Major Disruption)
+Trigger: Activity cancellations, major booking failures, severe service issues, safety concerns
+
+Compensation Options:
+Resort credit (Up to $1000)
+Complimentary premium experience (private tour, fine dining, spa treatment)
+Complimentary 1-night stay extension```
+
+Response Format:
+“Hi {!$Input:Contact.FirstName}, We know this wasn’t the experience you were expecting, and we want to make it right.
+
+[If Tier 0]
+We&apos;ve noted your preferences for future stays and invite you to share any additional feedback to help us improve.
+
+[If Tier 1-3]
+Based on your recent experience, we’d like to offer you one of the following options:
+
+[Insert compensation options based on the determined tier]
+
+Please let us know which option you’d like to select, and we’ll take care of the rest. If you need any further assistance, we’re here to help!”
+
+Now create a message.
+</content>
+        <inputs>
+            <apiName>Contact</apiName>
+            <definition>SOBJECT://Contact</definition>
+            <masterLabel>Contact</masterLabel>
+            <referenceName>Input:Contact</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>Complaint</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>Complaint</masterLabel>
+            <referenceName>Input:Complaint</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>flow://Get_Open_Cases_for_Contact</definition>
+            <parameters>
+                <definition>SOBJECT://Contact</definition>
+                <isRequired>true</isRequired>
+                <parameterName>contactRecord</parameterName>
+                <valueExpression>{!$Input:Contact}</valueExpression>
+            </parameters>
+            <referenceName>Flow:Get_Open_Cases_for_Contact</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>7Z3B/C8frpbDcyY3ml/nl59S13KK6tMfhM1zOpXtppY=_2</versionIdentifier>
+    </templateVersions>
+    <type>einstein_gpt__flex</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>

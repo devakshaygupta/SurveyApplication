@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExternalServiceRegistration xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This is auto-generated OpenAPI v3 spec for ProductZoningService.</description>
+    <label>ProductZoningService</label>
+    <schema>openapi: 3.0.0
+servers:
+  - url: /services/apexrest
+info:
+  title: ProductZoningService
+  version: 1.0.0
+  description: This is auto-generated OpenAPI v3 spec for ProductZoningService.
+  x-betaInfo: OpenAPI documents generated from Apex classes using Apex REST
+    annotations are in beta.
+paths:
+  /ProductZoning:
+    description: Default description for the path.
+    get:
+      summary: Get Permissible Fly Zone
+      description: Get Permissible Fly Zone
+      operationId: getPermissibleFlyZone
+      parameters: []
+      requestBody:
+        description: Request body containing product code
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                productCode:
+                  type: string
+              required:
+                - productCode
+            example:
+              productCode: ABC123
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  permissibleFlyZone:
+                    type: string
+                  info:
+                    type: string
+</schema>
+    <schemaType>OpenApi3</schemaType>
+    <schemaUploadFileExtension>yaml</schemaUploadFileExtension>
+    <schemaUploadFileName>productzoningservice_openapi</schemaUploadFileName>
+    <status>Complete</status>
+    <operations>
+        <name>getPermissibleFlyZone</name>
+    <active>true</active>
+    </operations>
+    <registrationProvider>ProductZoningService</registrationProvider>
+    <registrationProviderType>ApexRest</registrationProviderType>
+    <namedCredential>null</namedCredential>
+</ExternalServiceRegistration>

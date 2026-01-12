@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Generates package names for Coral Cloud resort offerings based on the provided details.</description>
+    <developerName>Generate_5_Package_names</developerName>
+    <masterLabel>Generate 5 Package names</masterLabel>
+    <templateVersions>
+        <content>You are a marketing assistant creating luxurious and appealing resort package names.
+Based on the following details, generate 5 creative and enticing names for a resort
+vacation package.
+
+Resort details:
+Coral Cloud Resorts offers private villas, beachside dining, and a family-friendly
+atmosphere focused on luxurious comfort. Make the names concise, elegant, and themed
+to match the details. Avoid generic phrases like “Special Deal” or “Vacation Offer.”
+Aim for names that evoke emotion and curiosity. Explain your thought process for each
+package step-by-step.
+</content>
+        <inputs>
+            <apiName>query</apiName>
+            <definition>primitive://String</definition>
+            <referenceName>Input:query</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>chunks</apiName>
+            <definition>primitive://String</definition>
+            <referenceName>Input:chunks</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Draft</status>
+        <versionIdentifier>7Z3B/C8frpbDcyY3ml/nl59S13KK6tMfhM1zOpXtppY=_1</versionIdentifier>
+    </templateVersions>
+    <type>einstein_gpt__searchAnswersType</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>

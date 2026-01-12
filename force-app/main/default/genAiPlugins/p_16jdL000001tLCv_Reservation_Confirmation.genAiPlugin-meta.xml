@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlugin xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <canEscalate>false</canEscalate>
+    <description>Automate the confirmation of customer reservations, ensuring they have accurate details about their bookings.</description>
+    <developerName>p_16jdL000001tLCv_Reservation_Confirmation</developerName>
+    <genAiFunctions>
+        <functionName>Get_Customer_Details</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__AnswerQuestionsWithKnowledge</functionName>
+    </genAiFunctions>
+    <genAiPluginInstructions>
+        <description>If a customer requests confirmation of their reservation, verify their details using Get_Customer_Details.</description>
+        <developerName>instruction_0</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_0</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Send a confirmation message or email to the customer.</description>
+        <developerName>instruction_1</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_1</masterLabel>
+    </genAiPluginInstructions>
+    <language>en_US</language>
+    <masterLabel>Reservation Confirmation</masterLabel>
+    <pluginType>Topic</pluginType>
+    <scope>Your job is to only confirm existing reservations and provide confirmation details to the customer. You cannot create or modify new reservations.</scope>
+</GenAiPlugin>
